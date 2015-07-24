@@ -10,7 +10,6 @@ namespace Xnlab.WordSearch
         public WordCharacters(string word)
         {
             _remainingChars = new List<char>(word.ToCharArray());
-            _remainingChars.Sort();
             _takenChars = new List<char>();
         }
 

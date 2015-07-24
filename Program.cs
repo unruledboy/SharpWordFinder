@@ -7,9 +7,8 @@ namespace Xnlab.WordSearch
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            if (args == null) throw new ArgumentNullException("args");
             var time = new Stopwatch();
             time.Start();
             var search = new WordSearch(File.ReadAllLines("words.txt"));
@@ -17,8 +16,13 @@ namespace Xnlab.WordSearch
             Console.WriteLine("Initialised {0}", time.Elapsed);
             while (true)
             {
-                Console.Write("Characters> ");
+                Console.Write("Input Characters:");
                 var chars = Console.ReadLine();
+                if (string.IsNullOrEmpty(chars))
+                {
+                    Console.WriteLine("Please provide alphabet letter to contiue");
+                    continue;
+                }
                 time.Restart();
                 var result = search.Find(chars.ToLowerInvariant());
                 time.Stop(); 
