@@ -5,8 +5,8 @@ namespace Xnlab.WordSearch
     public class WordNode
     {
         public bool IsWord { get; set; }
-        public char Current { get; private set; }
-        public Dictionary<char, WordNode> Children { get; private set; }
+        public char Current { get; }
+        public Dictionary<char, WordNode> Children { get; }
 
         public WordNode(char c)
         {
