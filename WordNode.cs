@@ -26,7 +26,8 @@ namespace Xnlab.WordSearch
                     Children[next] = new WordNode(next);
                 else if (Children[next].Children.Count == 0)
                     Children[next] = new WordNode(next) { IsWord = true };
-                Children[next].Add(word, index + 1);
+                //test failure
+                Children[next].Add(word, index + 1)
             }
         }
 
